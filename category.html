@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>栏目管理</title>
+	<link rel="stylesheet" href="css/common.css">
+	<link rel="stylesheet" href="css/lanmu.css">
+	<link rel="stylesheet" href="css/bootstrap-3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/iconFont/iconfont.css">
+	<script src="js/jquery-3.3.1/jquery-3.3.1.min.js"></script>
+	<script src="js/common.js"></script>
+	<script src="js/lanmu.js"></script>
+	<script src="js/config.js"></script>
+</head>
+<body>
+	<div class="bigcontainer">
+		<div class="left-line">
+			<div class="top-title">
+				<img src="img/u9.png" alt="" >
+				<span class="text-center title">看点资讯</span>
+			</div>
+			<div class="bottom-link">
+				<ul class="list-unstyled">
+					<li>
+						<img src="img/u52.png" alt="">
+						<span class="white">首页</span>
+						<span class="glyphicon glyphicon-menu-right white"></span>
+					</li>
+					<li>
+						<img src="img/u43.png" alt="">
+						<span class="white">栏目管理</span>
+						<span class="glyphicon glyphicon-menu-right white"></span>
+					</li>
+					<li>
+						<img src="img/u36.png" alt="">
+						<span class="white">资讯管理</span>
+						<span class="glyphicon glyphicon-menu-right white"></span>
+					</li>
+					<li>
+						<img src="img/u22.png" alt="">
+						<span class="white">用户管理</span>
+						<span class="glyphicon glyphicon-menu-right white"></span>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="right-content">
+			<div class="top-title">
+				<img src="img/u57.png" alt="">
+				<img src="img/u60.png" alt="">
+				<div class="sub text-center">
+					<span class="white">4</span>
+				</div>
+				<div class="touxiang">
+					<img src="img/u65.png" alt="">
+					<span>乔美丽 &nbsp;&nbsp;></span>
+				</div>
+			</div>
+			<div class="bottom-content">
+				<button class="btn btn-success addBtn">新增</button>
+				<button class="btn btn-success">批量删除</button>
+				<table class="table table-bordered table-hover table-responsive lanmutable">
+					<tr class="text-center">
+						<th>编号</th>
+						<th>栏目名称</th>
+						<th>父栏目</th>
+						<th>描述</th>
+						<th>操作</th>
+					</tr>
+				</table>
+			</div>
+		</div>
+		<div class="right-add">
+			<div class="left-zhegai"></div>
+			<div class="right-tianjia">
+				<div class="top-title">
+					<span>< &nbsp;&nbsp;返回</span>
+					<span>添加栏目</span>
+				</div>
+				<div class="bottom-form">
+					<form action="" class="form">
+						<div class="form-group">
+							<label for="">栏目名称</label>
+							<input type="text" class="form-control" name="Categorname">
+						</div>
+						<div class="form-group">
+							<label for="">父栏目</label>
+							<select name="parent" class="form-control">
+								<option value="">请选择</option>
+							</select>
+						</div>
+						<div class="form-group">
+							<label for="">描述</label>
+							<textarea name="comment" cols="30" rows="5" class="form-control miaoshu"></textarea>
+						</div>
+						<div class="form-group hide">
+							<button type="reset">重置</button>
+						</div>
+						<button class="btn btn-success saveBtn">确认</button>
+					</form>
+				</div>
+			</div>
+		</div>
+		<div class="alertDiv">
+			<div class="alert alert-success">
+				<strong>提示：</strong>
+				<span>执行成功</span>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

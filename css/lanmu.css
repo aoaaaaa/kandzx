@@ -1,0 +1,100 @@
+.bigcontainer{
+	position: relative;
+}
+.bottom-content{
+	width: 98%;
+	height: 90%;
+	background-color: white;
+	border-radius: 10px;
+	margin: 15px auto;
+	padding: 15px;
+	overflow-y: auto;
+}
+.bottom-content>button{
+	margin-right: 10px;
+}
+.bottom-content>table.lanmutable{
+	margin-top: 10px;
+	max-height: 550px;
+}
+.bottom-content>table th,
+.bottom-content>table td{
+	text-align: center;
+}
+.bottom-content>table th:first-child{
+	width: 10%;
+}
+.bottom-content>table th:nth-child(2),
+.bottom-content>table th:nth-child(3){
+	width: 17%;
+}
+.bottom-content>table th:last-child{
+	width: 10%;
+}
+.bottom-content>table.lanmutable tr td{
+	vertical-align: middle;
+}
+.bottom-content>table td i{
+	cursor: pointer;
+}
+.bottom-content>table td i:first-child{
+	color: #9cce52;
+	margin-right: 10px;
+}
+.bottom-content>table td i:last-child{
+	color: red;
+}
+.right-add{
+	position: absolute;
+	width: 1000px;
+	top: 0;
+	right: 0;
+	display: none;
+}
+.right-add>.left-zhegai{
+	width: 700px;
+	height: 100%;
+	opacity: 0.1;
+	background-color: black;
+	float: left;
+}
+.right-add>.right-tianjia{
+	width: 300px;
+	height: 100%;
+	background-color: white;
+	float: right;
+	border-right: 1px solid #999;
+}
+.right-add>.right-tianjia>.top-title{
+	height: 40px;
+	border-bottom: 1px solid #ccc;
+	text-align: center;
+	line-height: 40px;
+}
+.right-add>.right-tianjia>.top-title span:first-child{
+	margin-left: 20px;
+	float: left;
+	cursor: pointer;
+}
+.right-add>.right-tianjia>.top-title span:last-child{
+	margin-right: 40px;
+}
+.right-add>.right-tianjia>.bottom-form{
+	padding: 20px 30px;
+}
+.right-add>.right-tianjia>.bottom-form .miaoshu{
+	height: 70px;
+}
+.right-add>.right-tianjia>.bottom-form>form>button{
+	float: right;
+}
+.alertDiv{
+	position: absolute;
+	top: 40px;
+	right: 0px;
+	width: 300px;
+	display: none;
+}
+.messageSpan{
+	color: red;
+}

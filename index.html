@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>首页</title>
+	<link rel="stylesheet" href="css/bootstrap-3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/common.css">
+	<link rel="stylesheet" href="css/index.css">
+	<link rel="stylesheet" href="css/iconFont/iconfont.css">
+	<script src="js/jquery-3.3.1/jquery-3.3.1.min.js"></script>
+	<script src="js/common.js"></script>
+	<script src="http://cdn.hcharts.cn/highcharts/highcharts.js"></script>
+	<script src="https://img.hcharts.cn/highcharts/modules/exporting.js"></script>
+	<script src="https://img.hcharts.cn/highcharts/modules/sunburst.js"></script>
+
+	<script>
+		window.onload=function(){
+			// 图表配置
+	        var chart = Highcharts.chart('zhexian', {
+				colors: ['#00ff00','#eee'],
+				credits: {
+					enabled:false
+				},
+				exporting:{
+					buttons:{
+						contextButton:{
+							enabled:false
+						}
+					}	
+				},
+				chart: {
+					margin: 0
+				},
+				title: {
+					text: null
+				},
+				subtitle: {
+					text: ''
+				},
+				yAxis: {
+					title: {
+						text: ''
+					},
+					visible:false
+				},
+				xAxis: {
+					visible:false
+				},
+				legend: {
+					layout: 'vertical',
+					align: 'right',
+					verticalAlign: 'top',
+					floating: true//不占据绘图空间
+				},
+				plotOptions: {
+					series: {
+						label: {
+							connectorAllowed: false
+						},
+						pointStart: 2010
+					}
+				},
+				series: [{
+					name:'Pageviews',
+					data: [5706,9909,9909,6043,9032,13342,20092,23933,23092,19021,19021,28900,25872,21092,17982,17982,17982,38921,30091,25097,20092,17093,17093,13972,13972,15328,10921,9832,8930]
+				}, {
+					name:'Visitors',
+					data: [2938, 5930, 5930, 3920, 5930, 7261, 9902, 14032,17839,13927,11029,13927,12291,12291,12291,12291,9832,7621,5029,6039,8902,4837,9092,6382,9281,6932,9422,5922,3922]
+				}]
+				
+			});
+			var chart = Highcharts.chart('zhuxing', {
+				title: {
+					text: null
+				},
+				exporting:{
+					buttons:{
+						contextButton:{
+							enabled:false
+						}
+					}	
+				},
+				credits: {
+					enabled: false
+				},
+				subtitle: {
+					text: null
+				},
+				xAxis: {
+					visible: false
+				},
+				yAxis:{
+					visible: false
+				},
+				chart: {
+					margin: [0,0,0,0],
+					marginBottom: 0,
+					spacing: [0,0,0,0]
+				},
+				series: [{
+					type: 'column',
+					colorByPoint: false,
+					data: [29.9, 131.5, 106.4, 159.2, 144.0, 176.0, 194.6, 148.5, 120, 121, 95.6, 54.4],
+					showInLegend: false
+				}]
+			});
+
+			var chart = Highcharts.chart('huanxing', {
+				chart: {
+					spacing : [0, 0 , 0, 0]
+				},
+				exporting:{
+					buttons:{
+						contextButton:{
+							enabled:false
+						}
+					}	
+				},
+				credits: {
+					enabled: false
+				},
+				title: {
+					floating:true,
+					text: null
+				},
+				tooltip: {
+					pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+				},
+				plotOptions: {
+					pie: {
+						allowPointSelect: true,
+						cursor: 'pointer',
+						dataLabels: {
+							enabled: false
+						}
+					}
+				},
+				series: [{
+					type: 'pie',
+					innerSize: '60%',
+					name: 'sales',
+					data: [
+						['1',45.0],
+						['2',26.8],
+						['3',12.8],
+						['4',8.5],
+						['5',6.2],
+						['6',0.7]
+					]
+				}]
+			}, function(c) { // 图表初始化完毕后的会掉函数
+				// 环形图圆心
+				var centerY = c.series[0].center[1],
+					titleHeight = parseInt(c.title.styles.fontSize);
+				// 动态设置标题位置
+				c.setTitle({
+					y:centerY + titleHeight/2
+				});
+			});
+
+
+
+			//mini图
+			Highcharts.SparkLine = function (a, b, c) {
+				var hasRenderToArg = typeof a === 'string' || a.nodeName,
+					options = arguments[hasRenderToArg ? 1 : 0],
+					defaultOptions = {
+						chart: {
+							renderTo: (options.chart && options.chart.renderTo) || this,
+							backgroundColor: null,
+							borderWidth: 0,
+							type: 'area',
+							margin: [1, 0, 1, 0],
+							width: 220,
+							height: 30,
+							style: {
+								overflow: 'visible'
+							},
+							skipClone: true
+						},
+						exporting:{
+							buttons:{
+								contextButton:{
+									enabled:false
+								}
+							}	
+						},
+						title: {
+							text: ''
+						},
+						credits: {
+							enabled: false
+						},
+						xAxis: {
+							labels: {
+								enabled: false
+							},
+							title: {
+								text: null
+							},
+							startOnTick: false,
+							endOnTick: false,
+							tickPositions: []
+						},
+						yAxis: {
+							endOnTick: false,
+							startOnTick: false,
+							labels: {
+								enabled: false
+							},
+							title: {
+								text: null
+							},
+							tickPositions: [0]
+						},
+						legend: {
+							enabled: false
+						},
+						tooltip: {
+							backgroundColor: null,
+							borderWidth: 0,
+							shadow: false,
+							useHTML: true,
+							hideDelay: 0,
+							shared: true,
+							padding: 0,
+							positioner: function (w, h, point) {
+								return { x: point.plotX - w / 2, y: point.plotY - h };
+							}
+						},
+						plotOptions: {
+							series: {
+								animation: false,
+								lineWidth: 1,
+								shadow: false,
+								states: {
+									hover: {
+										lineWidth: 1
+									}
+								},
+								marker: {
+									radius: 1,
+									states: {
+										hover: {
+											radius: 2
+										}
+									}
+								},
+								fillOpacity: 0.25
+							},
+							column: {
+								negativeColor: '#ccc',
+								borderColor: 'silver'
+							}
+						}
+					};
+				options = Highcharts.merge(defaultOptions, options);
+				return hasRenderToArg ?
+					new Highcharts.Chart(a, options, c) :
+				new Highcharts.Chart(options, b);
+			};
+			var $tds = $('td[data-sparkline]'),
+				n = 0;
+			function doChunk() {
+				var time = +new Date(),
+					i,
+					len = $tds.length,
+					$td,
+					stringdata,
+					arr,
+					data,
+					chart;
+				for (i = 0; i < len; i += 1) {
+					$td = $($tds[i]);
+					stringdata = $td.data('sparkline');
+					arr = stringdata.split('; ');
+					data = $.map(arr[0].split(', '), parseFloat);
+					chart = {};
+					if (arr[1]) {
+						chart.type = arr[1];
+					}
+					$td.highcharts('SparkLine', {
+						series: [{
+							data: data,
+							pointStart: 1
+						}],
+						tooltip: {
+							headerFormat: '<span>' + $td.parent().find('th').html() + ', Q{point.x}:</span><br/>',
+							pointFormat: '<b>{point.y}.000</b> USD'
+						},
+						chart: chart
+					});
+					n += 1;
+					// If the process takes too much time, run a timeout to allow interaction with the browser
+					if (new Date() - time > 500) {
+						$tds.splice(0, i + 1);
+						setTimeout(doChunk, 0);
+						break;
+					}
+				}
+			}
+			doChunk();
+
+
+			Highcharts.setOptions({
+				lang: {
+					thousandsSep: ','
+				}
+			});
+			var data = [{
+				'id': '0.0',
+				'parent': '',
+				'name': 'The World'
+			}, {
+				'id': '1.1',
+				'parent': '0.0',
+				'name': '',
+				'color':'orange'
+			}, {
+				'id': '1.2',
+				'parent': '0.0',
+				'name': '',
+				'color':'white'
+			}, {
+				'id': '1.3',
+				'parent': '0.0',
+				'name': '',
+				'color':'#ccc'
+			},{
+				'id':'2.1',
+				'parent':'1.1',
+				'name':'45.2%',
+				'value':35,
+				'color':'#ccc'
+			},{
+				'id':'2.2.1',
+				'parent':'2.1',
+				'name':'14.8%',
+				'value':15,
+				'color':'purple'
+			},{
+				'id':'2.2.1.1',
+				'parent':'2.2.1',
+				'value':15,
+				'color':'#ccc'
+			},{
+				'id':'2.2.2',
+				'parent':'2.1',
+				'value':20,
+				'color':'#ccc'
+			},{
+				'id':'2.2.2.1',
+				'parent':'2.2.2',
+				'value':20
+			},{
+				'id':'2.2',
+				'parent':'1.2',
+				'name':'',
+				'value':30
+			},{
+				'id':'2.3.2',
+				'parent':'1.3',
+				'value':10
+			},{
+				'id':'2.3.2.1',
+				'parent':'2.3.2',
+				'value':10
+			},{
+				'id':'2.3.2.1.1',
+				'parent':'2.3.2.1',
+				'value':10
+			},{
+				'id':'2.3.1',
+				'parent':'1.3',
+				'name':'-30.9%',
+				'value':25,
+				'color':'blue'
+			},{
+				'id':'2.3.1.1',
+				'parent':'2.3.1',
+				'value':25,
+				'color':'#ccc'
+			},{
+				'id':'2.3.1.1.2',
+				'parent':'2.3.1.1',
+				'value':5
+			},{
+				'id':'2.3.1.1.1',
+				'parent':'2.3.1.1',
+				'name':'-21.3%',
+				'value':20,
+				'color':'green'
+			}];
+			// Splice in transparent for the center circle
+			Highcharts.getOptions().colors.splice(0, 0, 'transparent');
+			Highcharts.chart('duoceng', {
+				chart: {
+					height: '100%',
+				},
+				credits:{
+					enabled:false
+				},
+				exporting:{
+					buttons:{
+						contextButton:{
+							enabled:false
+						}
+					}	
+				},
+				title: {
+					text: ''
+				},
+				subtitle: {
+					text: ''
+				},
+				series: [{
+					type: 'sunburst',
+					data: data,
+					// allowDrillToNode: true,
+					cursor: 'pointer',
+					dataLabels: {
+						formatter: function () {
+							var shape = this.point.node.shapeArgs;
+							var innerArcFraction = (shape.end - shape.start) / ( 2*Math.PI);
+							var perimeter = 2 * Math.PI * shape.innerR;
+							var innerArcPixels = innerArcFraction * perimeter;
+						}
+					}
+				}]
+			});
+		}
+    </script>
+</head>
+<body>
+	<div class="bigcontainer">
+		<div class="left-line">
+			<div class="top-title">
+				<img src="img/u9.png" alt="" >
+				<span class="text-center title">看点资讯</span>
+			</div>
+			<div class="bottom-link">
+				<ul class="list-unstyled">
+					<li>
+						<img src="img/u52.png" alt="">
+						<span class="white">首页</span>
+						<span class="glyphicon glyphicon-menu-right white"></span>
+					</li>
+					<li>
+						<img src="img/u43.png" alt="">
+						<span class="white">栏目管理</span>
+						<span class="glyphicon glyphicon-menu-right white"></span>
+					</li>
+					<li>
+						<img src="img/u36.png" alt="">
+						<span class="white">资讯管理</span>
+						<span class="glyphicon glyphicon-menu-right white"></span>
+					</li>
+					<li>
+						<img src="img/u22.png" alt="">
+						<span class="white">用户管理</span>
+						<span class="glyphicon glyphicon-menu-right white"></span>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="right-content">
+			<div class="top-title">
+				<img src="img/u57.png" alt="">
+				<img src="img/u60.png" alt="">
+				<div class="sub text-center">
+					<span class="white">4</span>
+				</div>
+				<div class="touxiang">
+					<img src="img/u65.png" alt="">
+					<span>乔美丽 &nbsp;&nbsp;></span>
+				</div>
+			</div>
+			<div class="bottom-content">
+				<div class="top">
+					<div class="top-left">
+						<ul class="list-unstyled">
+							<li>
+								<div class="left">
+									<i class="iconfont icon-yun"></i>
+								</div>
+								<div class="right">
+									<span>99.9%</span>
+									<small>SERVER UPTIME</small>
+								</div>
+							</li>
+							<li>
+								<div class="left">
+									<i class="iconfont icon-user"></i>
+								</div>
+								<div class="right">
+									<span>117K</span>
+									<small>USERS TOTAL</small>
+								</div>
+							</li>
+							<li>
+								<div class="left">
+									<i class="iconfont icon-18"></i>
+								</div>
+								<div class="right">
+									<span>2,470</span>
+									<small>NEW PHOTOS</small>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="top-center">
+						<ul class="list-unstyled">
+							<li id="zhexian">
+							</li>
+							<div>
+								<span>14.85%</span>
+								<small>More visitors</small>
+							</div>
+						</ul>
+					</div>
+					<div class="top-right">
+						<ul class="list-unstyled">
+							<li>
+								<div>
+									<span>95.8%</span>
+									<small>CURRENT SERVER UPTIME</small>
+								</div>
+								<div id="zhuxing"></div>
+							</li>
+
+							<li>
+								<div>
+									<span>320,45</span>
+									<small>AVG OF SALES</small>
+								</div>
+								<div id="huanxing"></div>
+							</li>
+							
+						</ul>
+					</div>
+				</div>
+				<div class="bottom">
+					<ul class="list-unstyled">
+						<li>
+							<div id="duoceng" class="text-center"></div>
+							<div id="result">
+								<table id="table-sparkline">
+									<tbody id="tbody-sparkline">
+										<tr>
+											<th>Pageviews</th>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td data-sparkline="68, 52, 80, 96 "></td>
+										</tr>
+										<tr>
+											<th>Visitors</th>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td data-sparkline="29, 54, 63, 25 "></td>
+										</tr>
+										<tr>
+											<th>Converted Sales</th>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td data-sparkline="69, 44, 53, 55 "></td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</li>
+						<li>
+							<img src="img/u4.png" alt="">
+						</li>
+						<li>
+							<img src="img/u5.png" alt="">
+						</li>
+					</ul>
+				</div>
+			</div>	
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,81 @@
+.bigcontainer{
+	position: relative;
+}
+.bottom-content{
+	width: 98%;
+	height: 90%;
+	background-color: white;
+	border-radius: 10px;
+	margin: 15px auto;
+	padding: 15px;
+	overflow-y: auto; 
+}
+.bottom-content>.neirong{
+	margin-top: 20px;
+	width: 100%;
+}
+.bottom-content #my div.row{
+	line-height: 30px;
+}
+.bottom-content #my div.row div{
+	font-size: 12px;
+}
+.bottom-content>.neirong img{
+	width: 120px;
+	height: 120px;
+	border-radius: 50%;
+}
+.right-add{
+	position: absolute;
+	width: 1000px;
+	top: 0;
+	right: 0;
+	display: none;
+}
+.right-add>.left-zhegai{
+	width: 700px;
+	height: 100%;
+	opacity: 0.1;
+	background-color: black;
+	float: left;
+}
+.right-add>.right-tianjia{
+	width: 300px;
+	height: 100%;
+	background-color: white;
+	float: right;
+	border-right: 1px solid #999;
+}
+.right-add>.right-tianjia>.top-title{
+	height: 40px;
+	border-bottom: 1px solid #ccc;
+	text-align: center;
+	line-height: 40px;
+}
+.right-add>.right-tianjia>.top-title span:first-child{
+	margin-left: 20px;
+	float: left;
+	cursor: pointer;
+}
+.right-add>.right-tianjia>.top-title span:last-child{
+	margin-right: 40px;
+}
+.right-add>.right-tianjia>.bottom-form{
+	padding: 20px 30px;
+}
+.right-add>.right-tianjia>.bottom-form .miaoshu{
+	height: 70px;
+}
+.right-add>.right-tianjia>.bottom-form>form>button{
+	float: right;
+}
+.messageSpan{
+	color: red;
+}
+.alertDiv{
+	position: absolute;
+	top: 40px;
+	right: 0px;
+	width: 300px;
+	display: none;
+}

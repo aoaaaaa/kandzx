@@ -1,0 +1,91 @@
+*{
+	margin: 0;
+	padding: 0;
+	font-size: 14px;
+}	
+ul,td,th{
+	margin: 0;
+	padding: 0;
+}
+div{
+	box-sizing: border-box;
+}
+
+.white{
+	color: white;
+}
+.bigcontainer{
+	width: 1000px;
+	margin: 0 auto;
+}
+.left-line{
+	width: 180px;
+	height: 100%;
+	background-color: rgba(40, 40, 48, 1);
+	float: left;
+}
+.left-line>.top-title{
+	height: 38px;
+	background-color: rgba(61, 85, 109, 1);
+	padding: 0 15px;
+}
+.left-line>.top-title>img{
+			margin-right: 10px;
+}
+.left-line>.top-title>.title{
+	width: 80%;
+	height: 100%;
+	line-height: 38px;
+	font-weight: 400;
+	color: white;
+}
+.left-line>.bottom-link{
+	margin-top: 50px;
+}
+.left-line>.bottom-link>ul>li{
+	padding: 0 25px 0 15px;
+	border-bottom: 0.1px solid rgba(51, 51, 51, 1);
+	height: 29px;
+	line-height: 29px;
+	cursor: pointer;
+}
+.left-line>.bottom-link>ul>li>img{
+	margin-right: 10px;
+}
+.left-line>.bottom-link>ul>li>span:last-child{
+	float: right;
+	line-height: 29px;
+}
+.right-content{
+	width: 820px;
+	height: 100%;
+	background-color: rgba(240, 240, 240, 1);
+	border: 1px solid rgba(204, 204, 204, 1);
+	float: left;
+}
+.right-content>.top-title{
+	height: 38px;
+	background-color: white;
+	line-height: 38px;
+	padding: 0 70px 0 15px;
+	position: relative;
+}
+.right-content>.top-title>img{
+	margin-right: 30px;
+}
+.right-content>.top-title>.sub{
+	border-radius: 50%;
+	background-color: rgba(224, 81, 64, 1);
+	width: 14px;
+	height: 14px;
+	position: absolute;
+	top: 7px;
+	left: 75px;
+	line-height: 14px;
+}
+.right-content>.top-title>.touxiang{
+	float: right;
+}
+.right-content>.top-title>.touxiang>img{
+	margin-right: 10px;
+}

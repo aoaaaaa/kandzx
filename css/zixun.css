@@ -1,0 +1,130 @@
+.bigcontainer{
+	position: relative;
+}
+.bottom-content{
+	width: 98%;
+	height: 90%;
+	background-color: white;
+	border-radius: 10px;
+	margin: 15px auto;
+	padding: 15px;
+	overflow-y: auto;
+}
+.bottom-content>.optionDiv>select{
+	width: 200px;
+	height: 34px;
+	margin-right: 10px;
+	float: left;
+}
+.bottom-content>.optionDiv>button{
+	margin-right: 10px;
+	float: left;
+}
+.bottom-content>.optionDiv::after{
+	content: '';
+	clear: both;
+	display: block;
+}
+.bottom-content>table.zixuntable{
+	margin-top: 10px;
+	max-height: 550px;
+}
+.bottom-content>table th,
+.bottom-content>table td{
+	text-align: center;
+}
+.bottom-content>table th:first-child{
+	width: 7%;
+}
+.bottom-content>table th:nth-child(2){
+	width: 15%;
+}
+.bottom-content>table th:nth-child(3),
+.bottom-content>table th:nth-child(4),
+.bottom-content>table th:nth-child(5),
+.bottom-content>table th:nth-child(7){
+	width: 11%;
+}
+.bottom-content>table th:nth-child(6){
+	width: 25%;
+}
+.bottom-content>table th:last-child{
+	width: 11%;
+}
+.bottom-content>table.lanmutable tr td{
+	vertical-align: middle;
+}
+.bottom-content>table td i{
+	cursor: pointer;
+}
+.bottom-content>table td i:first-child{
+	color: #9cce52;
+	margin-right: 10px;
+}
+.bottom-content>table td i:last-child{
+	color: red;
+}
+.right-add{
+	position: absolute;
+	width: 1000px;
+	top: 0;
+	right: 0;
+	display: none;
+}
+.right-add>.right-tianjia{
+	width: 820px;
+	height: 100%;
+	background-color: white;
+	float: right;
+	border-right: 1px solid #999;
+	overflow-y: auto;
+
+}
+.right-add>.right-tianjia>.top-title{
+	height: 40px;
+	border-bottom: 1px solid #ccc;
+	text-align: center;
+	line-height: 40px;
+}
+.right-add>.right-tianjia>.top-title span:first-child{
+	margin-left: 20px;
+	float: left;
+	cursor: pointer;
+}
+.right-add>.right-tianjia>.top-title span:last-child{
+	margin-right: 40px;
+}
+.right-add>.right-tianjia>.bottom-form{
+	padding: 20px 30px;
+}
+.right-add>.right-tianjia>.bottom-form #liststyle>label{
+	display: block;
+}
+.right-add>.right-tianjia>.bottom-form #liststyle .radio label{
+	width: 250px;
+	height: 100px;
+	border: 1px solid #ccc;
+	/*padding: 10px 15px;*/
+	display: inline-block;
+}
+.right-add>.right-tianjia>.bottom-form #liststyle>.radio>label:first-child{
+	margin-right: 15px;
+}
+.right-add>.right-tianjia>.bottom-form #liststyle .radio img{
+	width: 220px;
+	height: 95px;
+}
+.right-add>.right-tianjia>.bottom-form #listsmall>button{
+	display: block;
+	height: 50px;
+	width: 200px;
+	color: blue;
+	background-color: white;
+	border: 1px solid #ccc;
+}
+.right-add>.right-tianjia>.bottom-form .miaoshu{
+	height: 260px;
+}
+.right-add>.right-tianjia>.bottom-form>form>button{
+	float: right;
+}
